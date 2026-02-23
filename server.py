@@ -20,3 +20,12 @@ def agents():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=10000)
+@app.route('/api/activity')
+def activity():
+    return jsonify({
+        "activities": [
+            {"agent": "CEO Agent", "action": "Generated morning brief", "details": "Revenue gap identified", "timestamp": "2026-02-23T06:00:00"},
+            {"agent": "CMO Agent", "action": "Published marketing brief", "details": "Content velocity priority", "timestamp": "2026-02-23T06:30:00"},
+            {"agent": "Calendar Sync", "action": "Completed sync", "details": "5 sessions processed", "timestamp": "2026-02-23T21:00:00"}
+        ]
+    })
